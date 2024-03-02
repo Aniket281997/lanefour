@@ -1,7 +1,12 @@
 {
-    "todos": [
-      { "id": 1, "text": "Learn Angular", "completed": false },
-      { "id": 2, "text": "Build an Angular app", "completed": true }
-    ]
+   "user":[
+    {
+      "email":"",
+      "password":"",
+      "accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "role":"admin"
+
+    }
+   ]
   }
   
