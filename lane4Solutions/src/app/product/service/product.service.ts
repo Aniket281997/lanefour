@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LOGIN_CONSTANT } from '../constant/login.constant';
+import { PRODUCT_CONSTANT } from '../constant/product.constant';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class ProductService {
+
 
   constructor( private httpClient: HttpClient) { }
 
-  postLogin(data: any) {
-    return this.httpClient.post(`${LOGIN_CONSTANT.SIGN_IN}`, data);
+  getProductList() {
+    return this.httpClient.get(`${PRODUCT_CONSTANT.PRODUCT_LIST}`);
   }
 }

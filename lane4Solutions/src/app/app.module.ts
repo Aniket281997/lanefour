@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './layout/component/header/header.component';
 import { MainComponent } from './layout/component/main/main.component';
+import { InterceptInterceptor } from './services/intercept.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MainComponent } from './layout/component/main/main.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:InterceptInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

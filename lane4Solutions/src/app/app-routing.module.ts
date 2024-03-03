@@ -18,10 +18,15 @@ const routes: Routes = [
     component: MainComponent,
     canActivate: [AuthGuard],
     children:[
-        {
+      {
         path: '',
         loadChildren: () =>
           import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+      },
+      {
+        path: 'product',
+        loadChildren: () =>
+          import('./product/product.module').then(m => m.ProductModule),
       },
     ]
   }
