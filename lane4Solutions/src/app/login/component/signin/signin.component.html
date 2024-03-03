@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card">
+        <h2 class="card-title text-center">Login</h2>
+        <div class="card-body py-md-4">
+          <form [formGroup]="signInForm" (submit)="onSignIn()">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Email Id"
+                formControlName="username"
+              />
+              <div
+                class="error-msg"
+                *ngIf="
+                  signInVal['username'].invalid &&
+                  (signInVal['username'].dirty || signInVal['username'].touched)
+                "
+              >
+                <span *ngIf="signInVal['email'].hasError('required')"
+                  >Email is required</span
+                >
+                <!-- <span *ngIf="signInVal['email'].hasError('email')"
+                  >Please Enter Valid Email</span
+                > -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <div
+                class="error-msg"
+                *ngIf="
+                  signInVal['password'].invalid &&
+                  (signInVal['password'].dirty || signInVal['password'].touched)
+                "
+              >
+                <span *ngIf="signInVal['password'].hasError('required')"
+                  >Password is required</span
+                >
+                <span *ngIf="signInVal['password'].hasError('minlength')"
+                  >Password must be at least 8 characters</span
+                >
+              </div>
+            </div>
+            <div
+              class="d-flex flex-row align-items-center justify-content-between"
+            >
+              <a href="#">Create Account</a>
+              <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
